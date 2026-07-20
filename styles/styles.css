@@ -2,6 +2,7 @@
     --height: auto;
     --text-align: center;
     --color: darkblue;
+    --font-color: white;
     --border: 1px solid rgb(0 0 0 / .2);
     --background-color: #eee;
 }
@@ -12,19 +13,23 @@
     box-sizing: border-box;
 }
 
-nav {
-    background-color: var(--color);
-    padding: 10px;
+header,
+.grid,
+footer {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: start;
+    gap: 1rem;
 }
 
 main {
-    max-width: 840px;
-}
 
-nav a {
-    color: white;
-    display: block;
-    padding: 20px;
+    margin: 1rem;
 }
 
 aside {
@@ -36,6 +41,25 @@ aside {
     color: #333;
     text-align: center;
     position: relative;
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+nav {
+    background-color: var(--color);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav a {
+    display: block;
+    padding: 0.5rem;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--font-color);
 }
 
 aside img {
@@ -51,6 +75,8 @@ aside h2 {
 
 h1 {
     color: var(--color);
+    padding: 5px;
+    border-bottom: 2px solid var(--color);
 }
 
 main img {
@@ -59,7 +85,6 @@ main img {
     border: var(--border);
     padding: 2px;
     box-shadow: 0 0 30px gray;
-    margin: 10px;
     float: right;
     margin: 0 0 1rem 1rem;
 }
